@@ -7,6 +7,9 @@ import {Component, OnInit} from '@angular/core';
 })
 export class AppComponent implements OnInit{
   images;
+  dense_flow = false;
+  grid_gap = 20;
+  image_size = 100;
 
   randomNumber(limit) {
     return Math.floor(Math.random() * limit) + 1;

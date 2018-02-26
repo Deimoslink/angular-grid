@@ -1,4 +1,21 @@
-<section class="gallery">
+<section class="control-panel">
+  <div class="grid-gap-wrapper">
+    <p>Grid Gap: {{grid_gap}}px</p>
+    <p-slider [(ngModel)]="grid_gap"></p-slider>
+    <p>Image Size: {{image_size}}px</p>
+    <p-slider [(ngModel)]="image_size" [min]="50" [max]="200"></p-slider>
+    <p>Dense Auto Flow</p>
+    <label class="switch">
+      <input type="checkbox" [(ngModel)]="dense_flow">
+      <span class="slider"></span>
+    </label>
+  </div>
+</section>
+
+<section class="gallery" [ngStyle]="{'grid-gap': grid_gap + 'px',
+                                     'grid-auto-flow': dense_flow ? 'dense' : 'row',
+                                     'grid-template-columns': 'repeat(auto-fill, ' + image_size + 'px)',
+                                     'grid-auto-rows': image_size + 'px'}">
   <div *ngFor="let image of images; let i = index;" [ngClass]="'item h' + image[0] + ' v' + image[1]">
     <img [src]="'../assets/images/' + image[2] + '.jpg'">
   </div>
