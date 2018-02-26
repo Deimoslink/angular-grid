@@ -1,1 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 50px;
+  font-family: sans-serif;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#dc00c2+0,c600d8+13,00deb9+38,00dcd1+61,f4a61e+79,360100+100 */
+  background: #dc00c2; /* Old browsers */
+  background: -moz-linear-gradient(left, #dc00c2 0%, #c600d8 13%, #00deb9 38%, #00dcd1 61%, #f4a61e 79%, #360100 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #dc00c2 0%,#c600d8 13%,#00deb9 38%,#00dcd1 61%,#f4a61e 79%,#360100 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #dc00c2 0%,#c600d8 13%,#00deb9 38%,#00dcd1 61%,#f4a61e 79%,#360100 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dc00c2', endColorstr='#360100',GradientType=1 ); /* IE6-9 */
+}
