@@ -1,8 +1,10 @@
-.gc-container {
+.ga-container {
   display: grid;
+  grid-gap: 20px;
   border: 4px solid #ffffffaa;
 }
-.gc-item {
+.ga-item {
   border-radius: 7px;
   background: #ffffffcc;
 }
+

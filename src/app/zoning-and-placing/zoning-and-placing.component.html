@@ -1,0 +1,80 @@
+<section class="control-panel">
+  <div class="grid-controls-wrapper">
+    <p>Item 1</p>
+    <p class="no-margin">grid-column</p>
+    <input type="text" pInputText [(ngModel)]="state['ga-item-1']['grid-column']"/>
+    <p class="no-margin">grid-row</p>
+    <input type="text" pInputText [(ngModel)]="state['ga-item-1']['grid-row']"/>
+    <p class="no-margin">grid-area</p>
+    <input type="text" pInputText [(ngModel)]="state['ga-item-1']['grid-area']"/>
+    <p class="no-margin">order</p>
+    <input type="text" pInputText [(ngModel)]="state['ga-item-1']['order']"/>
+    <p>Item 2</p>
+    <p class="no-margin">grid-column</p>
+    <input type="text" pInputText [(ngModel)]="state['ga-item-2']['grid-column']"/>
+    <p class="no-margin">grid-row</p>
+    <input type="text" pInputText [(ngModel)]="state['ga-item-2']['grid-row']"/>
+    <p class="no-margin">grid-area</p>
+    <input type="text" pInputText [(ngModel)]="state['ga-item-2']['grid-area']"/>
+    <p class="no-margin">order</p>
+    <input type="text" pInputText [(ngModel)]="state['ga-item-2']['order']"/>
+  </div>
+  <div class="grid-controls-wrapper">
+    <p>Item 3</p>
+    <p class="no-margin">grid-column</p>
+    <input type="text" pInputText [(ngModel)]="state['ga-item-3']['grid-column']"/>
+    <p class="no-margin">grid-row</p>
+    <input type="text" pInputText [(ngModel)]="state['ga-item-3']['grid-row']"/>
+    <p class="no-margin">grid-area</p>
+    <input type="text" pInputText [(ngModel)]="state['ga-item-3']['grid-area']"/>
+    <p class="no-margin">order</p>
+    <input type="text" pInputText [(ngModel)]="state['ga-item-3']['order']"/>
+    <p>Item 4</p>
+    <p class="no-margin">grid-column</p>
+    <input type="text" pInputText [(ngModel)]="state['ga-item-4']['grid-column']"/>
+    <p class="no-margin">grid-row</p>
+    <input type="text" pInputText [(ngModel)]="state['ga-item-4']['grid-row']"/>
+    <p class="no-margin">grid-area</p>
+    <input type="text" pInputText [(ngModel)]="state['ga-item-4']['grid-area']"/>
+    <p class="no-margin">order</p>
+    <input type="text" pInputText [(ngModel)]="state['ga-item-4']['order']"/>
+  </div>
+  <div class="grid-controls-wrapper">
+    <p>Container</p>
+    <p class="no-margin">grid-template-columns</p>
+    <input style="width: 100%" type="text" pInputText [(ngModel)]="temp_cols"/>
+    <p class="no-margin">grid-template-rows</p>
+    <input type="text" pInputText [(ngModel)]="temp_rows"/>
+    <p class="no-margin">grid-template-areas</p>
+    <textarea style="width:100%; resize: none" type="text" pInputText [(ngModel)]="grid_template_areas"></textarea>
+    <p>CSS Props:</p>
+    <code>
+      <pre>
+.grid-container &#x0007B;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: {{temp_cols}};
+  grid-template-rows: {{temp_rows}};
+  grid-template-areas: {{grid_template_areas}};
+  border: 4px solid #ffffffaa;
+&#x0007D;
+      </pre>
+      <p>.ga-item-1 {{state['ga-item-1'] | json}};</p>
+      <p>.ga-item-2 {{state['ga-item-2'] | json}};</p>
+      <p>.ga-item-3 {{state['ga-item-3'] | json}};</p>
+      <p>.ga-item-4 {{state['ga-item-4'] | json}};</p>
+    </code>
+  </div>
+</section>
+
+
+
+<div class="ga-container" [ngStyle]="{'grid-template-areas': grid_template_areas,
+                                      'grid-template-columns': temp_cols,
+                                      'grid-template-rows': temp_rows}">
+  <div *ngFor="let item of ['ga-item-1', 'ga-item-2', 'ga-item-3', 'ga-item-4']; let i = index;" class="ga-item" [ngStyle]="state[item]">
+    {{item}}
+  </div>
+</div>
+
+

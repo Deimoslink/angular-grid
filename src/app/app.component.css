@@ -63,3 +63,7 @@ nav ul li.active {
   background: #f4a61e;
   color: white;
 }
+
+.no-margin {
+  margin: 0;
+}
