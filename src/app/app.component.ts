@@ -15,10 +15,13 @@ export class AppComponent implements OnInit{
     return Math.floor(Math.random() * limit) + 1;
   }
 
-  ngOnInit() {
+  showImages() {
     this.images = Array.from({ length: 50 }, () => [this.randomNumber(4), this.randomNumber(4), this.randomNumber(15)])
-      .concat([[1, 1, this.randomNumber(15)]])
-    ;
+      .concat([[1, 1, this.randomNumber(15)]]);
+  }
+
+  ngOnInit() {
+    this.showImages();
   }
 
 }

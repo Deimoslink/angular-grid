@@ -15,6 +15,40 @@ body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dc00c2', endColorstr='#360100',GradientType=1 ); /* IE6-9 */
 }
 
+code {
+  font-family: monospace;
+}
+
+button {
+   border: 0;
+   background-color: inherit;
+   cursor: pointer;
+}
+button:focus {
+  outline: none;
+}
+
+@keyframes example {
+  0%   {background-color:#dc00c2}
+  17%  {background-color:#c600d8}
+  33%  {background-color:#00deb9}
+  50%  {background-color:#00dcd1}
+  67%  {background-color: #44d1de}
+  84%  {background-color:#0ec3ff}
+  100% {background-color:#dc00c2}
+}
+
+.turbo-laser-btn {
+  margin-top: 10px;
+  padding: 5px 10px;
+  font-size: 20px;
+  border-radius: 7px;
+  color: white;
+  animation-name: example;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+}
+
 .switch {
   height: 30px;
   width: 80px;
