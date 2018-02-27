@@ -8,6 +8,7 @@ import {Component, OnInit} from '@angular/core';
 export class GridConstructorComponent implements OnInit {
   num_of_items = 20;
   grid_gap = 20;
+  flow_direction = 'row';
   temp_cols: string;
   temp_rows: string;
   auto_cols: string;

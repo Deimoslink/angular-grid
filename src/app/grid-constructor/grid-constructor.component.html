@@ -1,5 +1,5 @@
 <section class="control-panel">
-  <div class="grid-controls-wrapper" width="500px">
+  <div class="grid-controls-wrapper">
     <p>Generate items</p>
     <input type="text" pInputText [(ngModel)]="num_of_items"/>
     <br>
@@ -10,17 +10,15 @@
     <input type="text" pInputText [(ngModel)]="temp_cols"/>
     <p>grid-template-rows</p>
     <input type="text" pInputText [(ngModel)]="temp_rows"/>
-    <p>Toggle auto flow</p>
-    <label class="switch">
-      <input type="checkbox" [(ngModel)]="auto">
-      <span class="slider"></span>
-    </label>
-    <div *ngIf="auto">
-      <p>grid-auto-columns</p>
-      <input type="text" pInputText [(ngModel)]="auto_cols"/>
-      <p>grid-auto-rows</p>
-      <input type="text" pInputText [(ngModel)]="auto_rows"/>
-    </div>
+  </div>
+  <div class="grid-controls-wrapper">
+    <p>Auto flow direction</p>
+    <p-radioButton value="row" [(ngModel)]="flow_direction" label="Row"></p-radioButton>
+    <p-radioButton value="column" [(ngModel)]="flow_direction" label="Column"></p-radioButton>
+    <p style="margin-top: 12px">grid-auto-columns</p>
+    <input type="text" pInputText [(ngModel)]="auto_cols"/>
+    <p>grid-auto-rows</p>
+    <input type="text" pInputText [(ngModel)]="auto_rows"/>
   </div>
   <div class="grid-controls-wrapper">
     <p>CSS Props:</p>
@@ -29,10 +27,12 @@
 .grid-container &#x0007B;
   display: grid;
   grid-gap: {{grid_gap}}px;
+  grid-auto-flow: {{flow_direction}};
   {{temp_cols ? 'grid-template-columns: ' + temp_cols + ';': ''}}
   {{temp_rows ? 'grid-template-rows: ' + temp_rows + ';': ''}}
-  {{auto && auto_cols ? 'grid-auto-columns: ' + auto_cols + ';': ''}}
-  {{auto && auto_rows ? 'grid-auto-rows: ' + auto_rows + ';': ''}}
+  {{auto_cols ? 'grid-auto-columns: ' + auto_cols + ';': ''}}
+  {{auto_rows ? 'grid-auto-rows: ' + auto_rows + ';': ''}}
+  border: 4px solid #ffffffaa;
 &#x0007D;
       </pre>
     </code>
@@ -42,8 +42,9 @@
 <div class="grid-container" [ngStyle]="{'grid-gap': grid_gap + 'px',
                                         'grid-template-columns': temp_cols,
                                         'grid-template-rows': temp_rows,
-                                        'grid-auto-columns': auto ? auto_cols : '',
-                                        'grid-auto-rows': auto ? auto_rows : ''}">
+                                        'grid-auto-flow': flow_direction,
+                                        'grid-auto-columns': auto_cols,
+                                        'grid-auto-rows': auto_rows}">
   <div *ngFor="let item of items; let i = index;" class="gc-item">
     <span class="badge">{{i + 1}}</span>
   </div>

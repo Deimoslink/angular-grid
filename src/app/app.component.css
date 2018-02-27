@@ -6,7 +6,7 @@ nav {
 
 nav ul {
   width: 1200px;
-  height: 50px;
+  height: 40px;
   margin: auto;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
@@ -40,9 +40,12 @@ nav ul li.active {
 
 .control-panel {
   display: grid;
-  grid-template-columns: 300px 400px;
+  grid-template-columns: 300px 300px 1fr;
   grid-gap: 20px;
   margin-bottom: 20px;
+}
+.control-panel p:first-of-type {
+  margin-top: 0;
 }
 
 .grid-controls-wrapper {

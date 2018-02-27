@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {InputSwitchModule, InputTextModule, SliderModule} from 'primeng/primeng';
+import {InputSwitchModule, InputTextModule, RadioButtonModule, SliderModule} from 'primeng/primeng';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {RouterModule, Routes} from '@angular/router';
 import {ImageGalleryComponent} from './image-gallery/image-gallery.component';
@@ -31,6 +31,7 @@ const routes: Routes = [
     SliderModule,
     InputSwitchModule,
     InputTextModule,
+    RadioButtonModule,
     RouterModule.forRoot(routes)
   ],
   providers: [],
