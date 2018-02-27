@@ -1,0 +1,51 @@
+<section class="control-panel">
+  <div class="grid-controls-wrapper" width="500px">
+    <p>Generate items</p>
+    <input type="text" pInputText [(ngModel)]="num_of_items"/>
+    <br>
+    <button class="turbo-laser-btn" (click)="setArrayOfItems(num_of_items)">Generate</button>
+    <p>Grid Gap: {{grid_gap}}px</p>
+    <p-slider [(ngModel)]="grid_gap"></p-slider>
+    <p>grid-template-columns</p>
+    <input type="text" pInputText [(ngModel)]="temp_cols"/>
+    <p>grid-template-rows</p>
+    <input type="text" pInputText [(ngModel)]="temp_rows"/>
+    <p>Toggle auto flow</p>
+    <label class="switch">
+      <input type="checkbox" [(ngModel)]="auto">
+      <span class="slider"></span>
+    </label>
+    <div *ngIf="auto">
+      <p>grid-auto-columns</p>
+      <input type="text" pInputText [(ngModel)]="auto_cols"/>
+      <p>grid-auto-rows</p>
+      <input type="text" pInputText [(ngModel)]="auto_rows"/>
+    </div>
+  </div>
+  <div class="grid-controls-wrapper">
+    <p>CSS Props:</p>
+    <code>
+      <pre>
+.grid-container &#x0007B;
+  display: grid;
+  grid-gap: {{grid_gap}}px;
+  {{temp_cols ? 'grid-template-columns: ' + temp_cols + ';': ''}}
+  {{temp_rows ? 'grid-template-rows: ' + temp_rows + ';': ''}}
+  {{auto && auto_cols ? 'grid-auto-columns: ' + auto_cols + ';': ''}}
+  {{auto && auto_rows ? 'grid-auto-rows: ' + auto_rows + ';': ''}}
+&#x0007D;
+      </pre>
+    </code>
+  </div>
+</section>
+
+<div class="grid-container" [ngStyle]="{'grid-gap': grid_gap + 'px',
+                                        'grid-template-columns': temp_cols,
+                                        'grid-template-rows': temp_rows,
+                                        'grid-auto-columns': auto ? auto_cols : '',
+                                        'grid-auto-rows': auto ? auto_rows : ''}">
+  <div *ngFor="let item of items; let i = index;" class="gc-item">
+    <span class="badge">{{i + 1}}</span>
+  </div>
+</div>
+

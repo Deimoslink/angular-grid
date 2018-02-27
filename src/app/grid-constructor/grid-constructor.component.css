@@ -1,0 +1,7 @@
+.grid-container {
+  display: grid;
+}
+.gc-item {
+  border-radius: 7px;
+  background: #ffffffcc;
+}
