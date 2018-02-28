@@ -1,0 +1,23 @@
+img {
+  width: 100%;
+}
+.p-container {
+  display: grid;
+  border: 4px solid #ffffffaa;
+  grid-gap: 20px;
+  height: 500px;
+  grid-template-columns: repeat(5, 130px);
+}
+.p-item {
+  border-radius: 7px;
+  background: #ffffffcc;
+}
+
+.radio-buttons-wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.radio-buttons-wrapper div {
+  display: grid;
+}

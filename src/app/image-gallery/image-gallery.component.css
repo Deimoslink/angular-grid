@@ -2,7 +2,9 @@
   display: grid;
   border: 4px solid #ffffffaa;
 }
-
+.css-stats {
+  grid-column: span 2;
+}
 .item {
   display: grid;
   overflow: hidden;

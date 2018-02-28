@@ -46,7 +46,7 @@
     <p class="no-margin">grid-template-rows</p>
     <input type="text" pInputText [(ngModel)]="temp_rows"/>
     <p class="no-margin">grid-template-areas</p>
-    <textarea style="width:100%; resize: none" type="text" pInputText [(ngModel)]="grid_template_areas"></textarea>
+    <textarea rows="8" style="width:100%; resize: none" type="text" pInputText [(ngModel)]="grid_template_areas"></textarea>
     <p>CSS Props:</p>
     <code>
       <pre>
@@ -73,7 +73,7 @@
                                       'grid-template-columns': temp_cols,
                                       'grid-template-rows': temp_rows}">
   <div *ngFor="let item of ['ga-item-1', 'ga-item-2', 'ga-item-3', 'ga-item-4']; let i = index;" class="ga-item" [ngStyle]="state[item]">
-    {{item}}
+    {{item}}<br>{{state[item]['grid-area']}}
   </div>
 </div>
 

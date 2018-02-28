@@ -1,0 +1,70 @@
+<img [src]="'../assets/images/css-meme.jpg'">
+<section class="control-panel">
+  <div class="grid-controls-wrapper">
+    <p>Container Props</p>
+    <div class="radio-buttons-wrapper">
+      <div>
+        <p-radioButton value="justify-" [(ngModel)]="container_prefix" label="justify-" (click)="changeContainerStyle()"></p-radioButton>
+        <p-radioButton value="align-" [(ngModel)]="container_prefix" label="align-" (click)="changeContainerStyle()"></p-radioButton>
+      </div>
+      <div>
+        <p-radioButton value="items" [(ngModel)]="container_modifier" label="items" (click)="changeContainerStyle()"></p-radioButton>
+        <p-radioButton value="content" [(ngModel)]="container_modifier" label="content" (click)="changeContainerStyle()"></p-radioButton>
+        <p-radioButton value="self" [(ngModel)]="container_modifier" label="self" (click)="changeContainerStyle()"></p-radioButton>
+      </div>
+      <div style="grid-column: span 2">
+        <p-radioButton value="start" [(ngModel)]="container_val" label="start" (click)="changeContainerStyle()"></p-radioButton>
+        <p-radioButton value="center" [(ngModel)]="container_val" label="center" (click)="changeContainerStyle()"></p-radioButton>
+        <p-radioButton value="end" [(ngModel)]="container_val" label="end" (click)="changeContainerStyle()"></p-radioButton>
+        <p-radioButton value="space-between" [(ngModel)]="container_val" label="space-between" (click)="changeContainerStyle()"></p-radioButton>
+        <p-radioButton value="space-around" [(ngModel)]="container_val" label="space-around" (click)="changeContainerStyle()"></p-radioButton>
+        <p-radioButton value="stretch" [(ngModel)]="container_val" label="stretch" (click)="changeContainerStyle()"></p-radioButton>
+      </div>
+    </div>
+    <br>
+    <button class="turbo-laser-btn" (click)="saveContainerRules()">Add Rule</button>
+  </div>
+  <div class="grid-controls-wrapper">
+    <p>Item Props</p>
+    <div class="radio-buttons-wrapper">
+      <div>
+        <p-radioButton value="justify-" [(ngModel)]="item_prefix" label="justify-" (click)="changeItemStyle()"></p-radioButton>
+        <p-radioButton value="align-" [(ngModel)]="item_prefix" label="align-" (click)="changeItemStyle()"></p-radioButton>
+      </div>
+      <div>
+        <p-radioButton value="items" [(ngModel)]="item_modifier" label="items" (click)="changeItemStyle()"></p-radioButton>
+        <p-radioButton value="content" [(ngModel)]="item_modifier" label="content" (click)="changeItemStyle()"></p-radioButton>
+        <p-radioButton value="self" [(ngModel)]="item_modifier" label="self" (click)="changeItemStyle()"></p-radioButton>
+      </div>
+      <div style="grid-column: span 2">
+        <p-radioButton value="start" [(ngModel)]="item_val" label="start" (click)="changeItemStyle()"></p-radioButton>
+        <p-radioButton value="center" [(ngModel)]="item_val" label="center" (click)="changeItemStyle()"></p-radioButton>
+        <p-radioButton value="end" [(ngModel)]="item_val" label="end" (click)="changeItemStyle()"></p-radioButton>
+        <p-radioButton value="space-between" [(ngModel)]="item_val" label="space-between" (click)="changeItemStyle()"></p-radioButton>
+        <p-radioButton value="space-around" [(ngModel)]="item_val" label="space-around" (click)="changeItemStyle()"></p-radioButton>
+        <p-radioButton value="stretch" [(ngModel)]="item_val" label="stretch" (click)="changeItemStyle()"></p-radioButton>
+      </div>
+    </div>
+    <br>
+    <button class="turbo-laser-btn" (click)="saveItemRules()">Add Rule</button>
+  </div>
+  <div class="grid-controls-wrapper">
+    <p>Container CSS Props:</p>
+    <code>
+      <pre>
+.grid-container {{containerStyle | json}}
+      </pre>
+    </code>
+    <p>item CSS Props:</p>
+    <code>
+      <pre>
+.item {{itemStyle | json}}
+      </pre>
+    </code>
+  </div>
+</section>
+<div class="p-container" [ngStyle]="containerStyle">
+  <div *ngFor="let item of items;" class="p-item" [ngStyle]="item === 'LOOK AT ME!!!' && itemStyle">
+    {{item}}
+  </div>
+</div>
