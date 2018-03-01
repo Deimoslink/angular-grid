@@ -1,6 +1,6 @@
 .gc-container {
   display: grid;
-  border: 4px solid #ffffffaa;
+  border: 4px solid rgba(255, 255, 255, 0.7);
 }
 .gc-item {
   border-radius: 7px;

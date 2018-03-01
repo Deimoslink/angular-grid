@@ -12,14 +12,14 @@ export class PositioningComponent implements OnInit {
     'display': 'grid',
     'grid-gap': '20px',
     'grid-template-columns': 'repeat(5, 130px)',
-    'border': '4px solid #ffffffaa'
+    'border': '4px solid rgba(255, 255, 255, 0.7)'
   };
   containerStyle = {
     'height': '500px',
     'display': 'grid',
     'grid-gap': '20px',
     'grid-template-columns': 'repeat(5, 130px)',
-    'border': '4px solid #ffffffaa'
+    'border': '4px solid rgba(255, 255, 255, 0.7)'
   };
   itemDefault = {'display': 'grid'};
   itemStyle = {'display': 'grid'};
