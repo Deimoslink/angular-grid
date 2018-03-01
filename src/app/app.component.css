@@ -35,7 +35,7 @@ nav ul li.active {
 
 .router-outlet-wrapper {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto 40px;
 }
 
 .control-panel {
@@ -67,3 +67,4 @@ nav ul li.active {
 .no-margin {
   margin: 0;
 }
+

@@ -1,3 +1,97 @@
-<p>
-  flex-grid works!
-</p>
+<div class="grid-controls-wrapper centered">
+  <p>If you want to use flex with me</p>
+  <pre>
+.grid-container &#x0007B;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+&#x0007D;
+  </pre>
+  <p>If you want to use grid</p>
+  <pre>
+.grid-container &#x0007B;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+&#x0007D;
+  </pre>
+  <p>Also this one can be used</p>
+  <pre>
+.grid-container &#x0007B;
+  display: grid;
+  place-items: center center;
+&#x0007D;
+  </pre>
+</div>
+
+<section class="section">
+  <div class="grid-controls-wrapper">
+    <p>I am possible with grid only</p>
+    <pre>
+.corners &#x0007B;
+  margin-top: 20px;
+  display: grid;
+  height: 200px;
+  width: 200px;
+  grid-template: 1fr 1fr / 1fr 1fr;
+  border: 10px solid #ffffffaa;
+  align-content: center;
+  align-items: end;
+  justify-content: center;
+  justify-items: end;
+&#x0007D;
+
+.corner &#x0007B;
+  background: #ffffffaa;
+  padding: 20px;
+&#x0007D;
+
+.corner:nth-child(1),
+.corner:nth-child(2) &#x0007B;
+  align-self: start;
+&#x0007D;
+
+.corner:nth-child(1),
+.corner:nth-child(3) &#x0007B;
+  justify-self: start;
+&#x0007D;
+  </pre>
+  </div>
+  <div class="corners">
+    <div class="corner item">1</div>
+    <div class="corner item">TWO</div>
+    <div class="corner item">3</div>
+    <div class="corner item">4</div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="grid-controls-wrapper">
+    <p>You can do this with flex, not with grid</p>
+    <pre>
+.stacked &#x0007B;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+&#x0007D;
+
+.stacked > * &#x0007B;
+  display: flex;
+  justify-content: center;
+  width: 30%;
+  margin-bottom: 20px;
+&#x0007D;
+
+  </pre>
+  </div>
+
+  <div class="stacked">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+  </div>
+
+</section>
